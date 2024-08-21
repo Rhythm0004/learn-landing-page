@@ -9,6 +9,52 @@ header {
     background-size: cover;
     font-family: sans-serif;
 }
+@media (min-width: 768px){
+    .btn_one {
+        display: none;
+    }
+    #check {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .btn_one i {
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+        position: absolute;
+        left: 16px;
+        line-height: 60px;
+        cursor: pointer;
+        transition: all 0.2s linear;
+    }
+    sidebar_menu .btn_two i{
+        color: grey;
+        font-size: 25px;
+        line-height: 60px;
+        position: absolute;
+        left: 325px;
+        opacity: 0;
+        cursor: pointer;
+        transition: all 0.2s linear;
+    }
+    #check {
+        display: none;
+    }
+    #check:checked ~ .navbar {
+        top: 0;
+    }
+    
+    #check:checked ~ .btn_one i {
+        opacity: 0;
+    }
+    
+    #check:checked ~ .navbar .btn_two i {
+        opacity: 1;
+    }
+}
+
 nav {
     width: 100%;
     height: 100px;
@@ -81,8 +127,8 @@ nav {
     border: 3px solid indianred;
 }
 
-@media only screen and (max-width: 769px) {
-    .navbar {
+@media only screen and (max-width: 768px) {
+    /* .navbar {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         display: block;
@@ -90,7 +136,7 @@ nav {
     }
     .logo {
         align-self: flex-start;
-        margin-top: 30px;
+        margin-top: 50px;
         z-index: -1;
     }
     .menu {
@@ -108,8 +154,11 @@ nav {
     .menu a {
         padding: 14px 30px;
         width: 100%;
-        border: 2px solid black;
+        border: 2px solid ;
         padding: 14px 0;
+        padding-left: 85%;
+        font-size: 40px;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 6px 0px;
     }
     .register button {
         z-index: -1;
@@ -117,5 +166,119 @@ nav {
     }
     .h-txt {
         z-index: -1;
+    } */
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
     }
+    .open {
+        display:flex;
+    }
+    .open + .h-txt {
+        position: absolute;
+        z-index: -1;
+    }
+    .logo {
+        color: white;
+        font-size: 50px;
+        padding: 20px;
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 6px 0px;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu a {
+        text-decoration: none;
+        font-size: 40px;
+        color: white;
+        padding: 20px 30px;
+        width: 100%;
+    }
+    .menu a:hover {
+        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 6px 0px;
+    }
+    .register {
+        width: 100%;
+    }
+    .register button {
+        padding: 10px 20px;
+        font-size: 40px;
+        background-color: indianred;
+        color: white;
+        margin-top: 10px;
+    }
+    .register button:hover {
+        background-color: black;
+        border: 2px solid indianred;
+    }
+    /* Sliding entrances */
+    @-webkit-keyframes slideInDown {
+        from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+        }
+    
+        to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes slideInDown {
+        from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+        }
+    
+        to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        }
+    }
+    .open {
+        -webkit-animation-name: slideInDown;
+        animation-name: slideInDown;
+        animation-duration: 2s;
+      }
+
+      @-webkit-keyframes slideOutUp {
+        from {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      
+        to {
+          visibility: hidden;
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+      @keyframes slideOutUp {
+        from {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      
+        to {
+          visibility: hidden;
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+      .navbar {
+        -webkit-animation-name: slideOutUp;
+        animation-name: slideOutUp;
+        animation-duration: 2s;
+      }
+ 
 }
