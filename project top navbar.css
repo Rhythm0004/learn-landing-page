@@ -9,51 +9,6 @@ header {
     background-size: cover;
     font-family: sans-serif;
 }
-@media (min-width: 768px){
-    .btn_one {
-        display: none;
-    }
-    #check {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .btn_one i {
-        color: white;
-        font-size: 30px;
-        font-weight: 700;
-        position: absolute;
-        left: 16px;
-        line-height: 60px;
-        cursor: pointer;
-        transition: all 0.2s linear;
-    }
-    sidebar_menu .btn_two i{
-        color: grey;
-        font-size: 25px;
-        line-height: 60px;
-        position: absolute;
-        left: 325px;
-        opacity: 0;
-        cursor: pointer;
-        transition: all 0.2s linear;
-    }
-    #check {
-        display: none;
-    }
-    #check:checked ~ .navbar {
-        top: 0;
-    }
-    
-    #check:checked ~ .btn_one i {
-        opacity: 0;
-    }
-    
-    #check:checked ~ .navbar .btn_two i {
-        opacity: 1;
-    }
-}
 
 nav {
     width: 100%;
@@ -128,7 +83,7 @@ nav {
 }
 
 @media only screen and (max-width: 768px) {
-    /* .navbar {
+    /* #navbar {
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         display: block;
@@ -167,7 +122,7 @@ nav {
     .h-txt {
         z-index: -1;
     } */
-    .navbar{
+    #navbar{
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -221,7 +176,7 @@ nav {
         border: 2px solid indianred;
     }
     /* Sliding entrances */
-    @-webkit-keyframes slideInDown {
+    /* @-webkit-keyframes slideInDown {
         from {
         -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
@@ -249,9 +204,9 @@ nav {
         -webkit-animation-name: slideInDown;
         animation-name: slideInDown;
         animation-duration: 2s;
-      }
+      } */
 
-      @-webkit-keyframes slideOutUp {
+      /* @-webkit-keyframes slideOutUp {
         from {
           -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -275,10 +230,50 @@ nav {
           transform: translate3d(0, -100%, 0);
         }
       }
-      .navbar {
+      #navbar {
         -webkit-animation-name: slideOutUp;
         animation-name: slideOutUp;
         animation-duration: 2s;
-      }
+      }*/
  
+}
+
+/* #navbar {
+    height: 100px;
+    transition: height 0.5s ease; 
+  }
+  
+  #navbar.collapsed {
+    height: 50px; 
+  } */
+
+#menu-icon {
+    color: white;
+    font-size: 30px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none
+} 
+
+@media (max-width: 865px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .menu {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 300px;
+    height: 40vh;
+    /* background-color: white;
+    opacity: 0.5; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    transition: all 0.55s ease;
+    z-index: 10000;
+    }
+    
 }
