@@ -83,68 +83,24 @@ nav {
 }
 
 @media only screen and (max-width: 768px) {
-    /* #navbar {
+    .navbar {
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: block;
-        margin-top: -30px;
-    }
-    .logo {
-        align-self: flex-start;
-        margin-top: 50px;
-        z-index: -1;
-    }
-    .menu {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        height: 100%;
-        margin-top: 50px;
-        width: 100%;
-        align-items: center;
-        position: absolute;
-        top: 10px;
-        left: 40%;
-        position: unset;
-    }
-    .menu a {
-        padding: 14px 30px;
-        width: 100%;
-        border: 2px solid ;
-        padding: 14px 0;
-        padding-left: 85%;
-        font-size: 40px;
-        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 6px 0px;
-    }
-    .register button {
-        z-index: -1;
-        position: absolute;
-    }
-    .h-txt {
-        z-index: -1;
-    } */
-    #navbar{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        height: 100%;
-        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
         position: absolute;
         z-index: 1;
-        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+    }   
+    .menu-icon {
+        color: white;
+    } 
+    .d-none{
         display: none;
     }
-    .open {
-        display:flex;
-    }
-    .open + .h-txt {
-        position: absolute;
-        z-index: -1;
-    }
     .logo {
-        color: white;
         font-size: 50px;
-        padding: 20px;
-        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 6px 0px;
     }
     .menu {
         display: flex;
@@ -152,128 +108,109 @@ nav {
         align-items: center;
     }
     .menu a {
-        text-decoration: none;
         font-size: 40px;
-        color: white;
-        padding: 20px 30px;
-        width: 100%;
-    }
-    .menu a:hover {
-        box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 6px 0px;
-    }
-    .register {
-        width: 100%;
+        margin-bottom: 20px;
     }
     .register button {
-        padding: 10px 20px;
         font-size: 40px;
-        background-color: indianred;
-        color: white;
-        margin-top: 10px;
+        padding: 20px;
     }
-    .register button:hover {
-        background-color: black;
-        border: 2px solid indianred;
-    }
-    /* Sliding entrances */
-    /* @-webkit-keyframes slideInDown {
-        from {
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-        visibility: visible;
-        }
-    
-        to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        }
-    }
+
     @keyframes slideInDown {
         from {
-        -webkit-transform: translate3d(0, -100%, 0);
-        transform: translate3d(0, -100%, 0);
-        visibility: visible;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+            visibility: visible;
         }
-    
         to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
         }
+    }
+    
+    @-webkit-keyframes slideOutUp {
+        from {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        to {
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+            visibility: hidden;
+        }
+    }
+    
+    @keyframes slideOutUp {
+        from {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        to {
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+            visibility: hidden;
+        }
+    }
+    @-webkit-keyframes slideInLeft {
+        from {
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+        }
+      
+        to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      @keyframes slideInLeft {
+        from {
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+        }
+      
+        to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      @-webkit-keyframes slideOutLeft {
+        from {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      
+        to {
+          visibility: hidden;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+      @keyframes slideOutLeft {
+        from {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      
+        to {
+          visibility: hidden;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+    /* Menu animation starts */
+    .navbar {
+        -webkit-animation-name: slideOutLeft;
+        animation-name: slideOutLeft;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
     }
     .open {
-        -webkit-animation-name: slideInDown;
-        animation-name: slideInDown;
-        animation-duration: 2s;
-      } */
-
-      /* @-webkit-keyframes slideOutUp {
-        from {
-          -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-        }
-      
-        to {
-          visibility: hidden;
-          -webkit-transform: translate3d(0, -100%, 0);
-          transform: translate3d(0, -100%, 0);
-        }
-      }
-      @keyframes slideOutUp {
-        from {
-          -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-        }
-      
-        to {
-          visibility: hidden;
-          -webkit-transform: translate3d(0, -100%, 0);
-          transform: translate3d(0, -100%, 0);
-        }
-      }
-      #navbar {
-        -webkit-animation-name: slideOutUp;
-        animation-name: slideOutUp;
-        animation-duration: 2s;
-      }*/
- 
-}
-
-/* #navbar {
-    height: 100px;
-    transition: height 0.5s ease; 
-  }
-  
-  #navbar.collapsed {
-    height: 50px; 
-  } */
-
-#menu-icon {
-    color: white;
-    font-size: 30px;
-    z-index: 10001;
-    cursor: pointer;
-    display: none
-} 
-
-@media (max-width: 865px) {
-    #menu-icon {
-        display: block;
+        -webkit-animation-name: slideInLeft;
+        animation-name: slideInLeft;
+        visibility: visible;
     }
+     /* Menu animation ends */
 
-    .menu {
-    position: absolute;
-    top: 100px;
-    right: 0;
-    width: 300px;
-    height: 40vh;
-    /* background-color: white;
-    opacity: 0.5; */
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px 20px;
-    transition: all 0.55s ease;
-    z-index: 10000;
-    }
-    
 }

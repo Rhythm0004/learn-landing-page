@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <link rel="stylesheet" href="project top navbar.css">
+    <link rel="stylesheet" href="hamburger.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -15,12 +15,19 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">    
 </head>
 <body>
-    <header>     
-       <nav class="navbar d-none">
+    <header> 
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    
+        
+       <nav id="navbar">
         <div class="logo">
             Travel-X
         </div>
-        <div class="menu-icon"> Menu</div>
+          
         <div class="menu">
             <a href="#">Home</a>            
             <a href="#">Hill Stations</a>
@@ -34,32 +41,16 @@
         </div>
 
        </nav> 
-    </header>
-    <section class="h-txt">
-        <div class="menu-icon"> Menu</div>
 
+       <section class="h-txt">
         <span>Enjoy</span>
         <h1>International Travel Agency</h1>
 
         <br>
         <a href="#">Book Your Trip</a>
        </section>
-    <script>
-        document.querySelectorAll('.menu-icon').forEach((menu) => {
-            menu.addEventListener("click", function() {
-            var navbar = document.querySelector('.navbar');
-            if( navbar.classList.contains('d-none')) {
-                navbar.classList.remove('d-none');
-                navbar.classList.add('open');
-            } else {
-                if (navbar.classList.contains("open")) {
-                    navbar.classList.remove('open');
-                } else {
-                    navbar.classList.add('open');
-                }
-            }
-        })
-        })
-    </script>
+    </header>
+    
+    <script src="hamburger.js"></script>
 </body>
 </html>
